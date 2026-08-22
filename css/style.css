@@ -1,3 +1,10 @@
+/* RESET GLOBAL - TARUH PALING ATAS */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* --- RESET GLOBAL UNTUK MENCEGAH ELEMEN KELUAR BATAS --- */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -128,9 +135,18 @@ body.projects-page {
     overflow-y: auto; 
     overflow-x: hidden;
     color: #111; 
-    padding: 20px 40px 100px 40px; 
-    height: auto; 
+    padding: 20px 40px 100px 40px;  
     min-height: 100vh;
+}
+
+/* Memastikan kontainer proyek memiliki batas bawah yang jelas */
+.project-grid-container {
+    margin-bottom: 50px; 
+}
+
+/* Memastikan grid terakhir tidak menempel ke bawah */
+.project-grid:last-child {
+    margin-bottom: 50px;
 }
 
 /* Animasi untuk menggerakkan garis diagonal */
