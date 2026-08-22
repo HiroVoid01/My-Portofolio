@@ -297,3 +297,49 @@ body.projects-page {
 .content-container {
     padding-bottom: 60px; /* Ruang kosong ekstra di bawah */
 }
+
+/* ========================================= */
+/* --- GAYA HALAMAN SKILLS, ABOUT, CONTACT   --- */
+/* ========================================= */
+
+/* Halaman About dan Contact tetap pakai garis abu gelap */
+body.about-page, body.contact-page {
+    background: repeating-linear-gradient(45deg, #111, #111 20px, #1a1a1a 20px, #1a1a1a 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: #FDF5E6;
+    padding: 20px 40px;
+    min-height: 100vh;
+}
+
+/* KODE BARU: Halaman Skills dibuat transparan untuk video */
+body.skills-page {
+    background: transparent; /* Transparan agar video di belakangnya terlihat */
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: #FDF5E6;
+    padding: 20px 40px 100px 40px; /* Padding bawah 100px agar aman di HP */
+    min-height: 100vh;
+}
+
+/* LAPISAN PENGATUR TINGKAT GELAP/TERANG VIDEO */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Berada di atas video, tapi di bawah konten */
+    
+    /* Ganti nilai 0.7 ini. 
+       0 = Video asli (tidak ada efek)
+       0.5 = Agak gelap
+       0.9 = Hampir hitam pekat */
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+/* Pastikan z-index video diubah jadi lebih mundur (-2) */
+.video-bg {
+    z-index: -2; /* <-- UPDATE BAGIAN INI */
+    /* ... (sisa kode .video-bg tetap sama) ... */
+}
