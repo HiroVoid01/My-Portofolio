@@ -428,3 +428,146 @@ body.skills-page {
         font-size: 1.5rem;
     }
 }
+
+/* ========================================= */
+/* --- GAYA KOTAK SKILLS (DIO THEME)     --- */
+/* ========================================= */
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 700px; /* Membatasi lebar kotak agar tidak kepanjangan */
+}
+
+.skill-item {
+    background-color: rgba(15, 15, 15, 0.85); /* Kotak hitam pekat agak transparan */
+    padding: 25px 30px;
+    border-left: 12px solid #FFD700; /* Garis tebal warna emas di kiri */
+    border-right: 2px solid #FFD700; 
+    transform: skewX(-5deg); /* Efek miring ala Persona */
+    transition: 0.3s ease-in-out;
+    box-shadow: 8px 8px 0px rgba(255, 215, 0, 0.3); /* Bayangan emas transparan */
+}
+
+/* Efek saat kursor diarahkan ke kotak (Hover) */
+.skill-item:hover {
+    transform: skewX(-5deg) translateX(15px); /* Geser sedikit ke kanan */
+    box-shadow: -10px 10px 0px #FFD700; /* Bayangan pindah ke kiri dan jadi solid */
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.skill-level {
+    background-color: #FFD700; /* Label emas */
+    color: #111; /* Teks hitam */
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 12px;
+    transform: skewX(5deg); /* Meluruskan teks label di dalam kotak yang miring */
+}
+
+.skill-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    color: #FFF; 
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #FFD700; /* Bayangan teks emas */
+}
+
+.skill-item p { 
+    margin: 0; 
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #E0E0E0; /* Warna abu-abu terang agar nyaman dibaca */
+}
+
+/* ========================================= */
+/* --- GAYA KOTAK ABOUT (DIO THEME)      --- */
+/* ========================================= */
+
+body.about-page {
+    background: transparent; /* Transparan agar video terlihat */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 40px 100px 40px;
+    min-height: 100vh;
+}
+
+.about-box {
+    background-color: rgba(15, 15, 15, 0.85); /* Hitam pekat transparan */
+    padding: 40px;
+    border-left: 12px solid #FFD700; /* Garis emas */
+    border-right: 2px solid #FFD700;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    transform: skewX(-5deg);
+    box-shadow: 8px 8px 0px rgba(255, 215, 0, 0.3); /* Bayangan emas */
+    color: #E0E0E0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-box h3 {
+    color: #FFF;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #FFD700; /* Teks glow emas */
+}
+
+.about-box p {
+    margin-bottom: 20px;
+}
+
+/* ========================================= */
+/* --- GAYA HALAMAN CONTACT (DIO THEME)  --- */
+/* ========================================= */
+
+body.contact-page {
+    background: transparent; /* Transparan agar video terlihat */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 40px 100px 40px;
+    min-height: 100vh;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center; /* Memosisikan tombol di tengah */
+    margin-top: 40px;
+}
+
+.contact-btn {
+    display: block;
+    width: 100%;
+    max-width: 500px; /* Lebar maksimal tombol */
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+    background-color: rgba(15, 15, 15, 0.85); /* Hitam transparan */
+    padding: 20px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    border-left: 12px solid #FFD700; /* Garis emas */
+    border-right: 2px solid #FFD700;
+    transform: skewX(-5deg); /* Efek miring */
+    transition: 0.3s ease-in-out;
+    box-shadow: 8px 8px 0px rgba(255, 215, 0, 0.3); /* Bayangan emas */
+    text-shadow: 2px 2px 0px #FFD700; /* Teks glow emas */
+}
+
+/* Efek saat kursor diarahkan ke tombol */
+.contact-btn:hover {
+    transform: skewX(-5deg) translateX(15px); /* Geser ke kanan */
+    background-color: #FFD700; /* Tombol berubah jadi emas terang */
+    color: #111; /* Teks berubah jadi hitam */
+    border-left: 12px solid #111; /* Garis berubah jadi hitam */
+    border-right: 2px solid #111;
+    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.9); /* Bayangan pindah ke kiri jadi hitam pekat */
+    text-shadow: none; /* Menghilangkan glow teks karena background sudah emas */
+}
