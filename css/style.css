@@ -343,3 +343,88 @@ body.skills-page {
     z-index: -2; /* <-- UPDATE BAGIAN INI */
     /* ... (sisa kode .video-bg tetap sama) ... */
 }
+
+/* ========================================= */
+/* --- RESPONSIVE DESIGN (UNTUK HP & TABLET) --- */
+/* ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. PENYESUAIAN HALAMAN UTAMA (index.html) */
+    .content {
+        padding: 20px;
+        align-items: center; /* Memposisikan menu ke tengah layar di HP */
+        text-align: center;
+    }
+
+    .brand-name {
+        font-size: clamp(2.5rem, 12vw, 4rem); /* Mengecilkan teks JACKI */
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    .menu-item {
+        font-size: clamp(2rem, 8vw, 3rem); /* Mengecilkan ukuran menu navigasi */
+    }
+
+    .persona-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memastikan list menu berada di tengah */
+    }
+
+    /* 2. PENYESUAIAN PADDING HALAMAN LAIN */
+    body.projects-page, 
+    body.skills-page {
+        padding: 20px 15px 80px 15px; /* Mengurangi padding kiri-kanan agar ruang lebih lega */
+    }
+
+    /* 3. PENYESUAIAN HEADER & JUDUL HALAMAN */
+    .project-header {
+        flex-direction: column; /* Menyusun nama dan judul dari atas ke bawah */
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .page-title {
+        width: 100%;
+        justify-content: space-between; /* Judul di kiri, tombol Back di kanan */
+        flex-wrap: wrap; /* Jika layar sangat kecil, elemen akan turun ke baris baru */
+    }
+
+    .page-title h2 {
+        font-size: 2.2rem; /* Judul P R O J E C T S lebih kecil */
+        transform: skewX(0); /* Menghilangkan efek miring agar tidak makan tempat */
+    }
+
+    .back-btn {
+        transform: skewX(0);
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    /* 4. PENYESUAIAN GRID (KOTAK PROYEK & SKILL) */
+    .project-grid {
+        /* PENTING: Memaksa kotak menjadi 1 kolom saja di layar HP */
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    /* 5. MENGHILANGKAN KEMIRINGAN KOTAK DI HP */
+    /* Di layar HP, efek miring (skew) membuang banyak ruang horizontal, jadi kita luruskan */
+    .project-card, 
+    .skill-item,
+    .card-header, 
+    .card-body, 
+    .card-footer {
+        transform: skewX(0) !important; 
+    }
+
+    .project-card:hover,
+    .skill-item:hover {
+        transform: translateY(-5px) !important; /* Hanya naik ke atas saat di-klik/sentuh, tidak miring */
+    }
+
+    .card-body h4 {
+        font-size: 1.5rem;
+    }
+}
