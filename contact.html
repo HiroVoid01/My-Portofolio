@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACKI - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page"> 
+
+    <!-- VIDEO BACKGROUND UNTUK CONTACT -->
+    <video autoplay loop muted playsinline class="video-bg">
+        <!-- Siapkan video baru bernama bg-contact.mp4 -->
+        <source src="assets/bg-contact.mp4" type="video/mp4">
+    </video>
+
+    <!-- LAPISAN PENGATUR TRANSPARANSI -->
+    <div class="video-overlay"></div>
+
+    <header class="project-header">
+        <h1 class="brand-name-small">
+            <span class="letter white-bg">J</span><span class="letter black-bg">A</span><span class="letter white-bg">C</span><span class="letter black-bg">K</span><span class="letter white-bg tilt-right">I</span>
+        </h1>
+        <div class="page-title">
+            <h2>C O N T A C T</h2>
+            <a href="index.html" class="back-btn">ESC - BACK</a>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <!-- Tombol-tombol link kontak -->
+        <div class="contact-links">
+            <a href="mailto:stefanuspandi22@gmail.com" class="contact-btn">H I R E &nbsp;&nbsp;&nbsp; M E</a>
+            <a href="https://wa.me/6282198995676" class="contact-btn">W H A T S A P P</a>
+            <a href="Maaf ya, masih belum tersedia" class="contact-btn">I N S T A G R A M</a>
+            <a href="Maaf ya, masih belum tersedia" class="contact-btn">Y O U T U B E</a>
+        </div>
+    </main>
+
+    <script>
+        // Mendengarkan saat ada tombol yang ditekan
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Arahkan ke halaman utama saat ESC ditekan
+                window.location.href = 'index.html'; 
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACKI - About</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="about-page"> 
+
+    <!-- VIDEO BACKGROUND UNTUK ABOUT -->
+    <video autoplay loop muted playsinline class="video-bg">
+        <!-- Jangan lupa siapkan video baru di folder assets -->
+        <source src="assets/bg-about.mp4" type="video/mp4">
+    </video>
+
+    <!-- LAPISAN PENGATUR TRANSPARANSI -->
+    <div class="video-overlay"></div>
+
+    <header class="project-header">
+        <h1 class="brand-name-small">
+            <span class="letter white-bg">J</span><span class="letter black-bg">A</span><span class="letter white-bg">C</span><span class="letter black-bg">K</span><span class="letter white-bg tilt-right">I</span>
+        </h1>
+        <div class="page-title">
+            <h2>A B O U T</h2>
+            <a href="index.html" class="back-btn">ESC - BACK</a>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <div class="about-box">
+            <h3>HELLO, I'M JACKI.</h3>
+            <p>Saya adalah seorang spesialis di bidang penyuntingan video dan manajemen penjualan produk digital. Memiliki ketertarikan yang besar dalam merakit elemen visual, audio, dan transisi menjadi sebuah sajian konten yang tajam dan mampu menarik perhatian audiens secara maksimal.</p>
+            <p>Selain berfokus pada sisi kreatif produksi video, saya juga secara aktif mengelola operasi e-commerce "DigitalMarkt", sebuah platform distribusi untuk lisensi dan aset aplikasi. Gaya kerja saya sangat menjunjung tinggi efisiensi, dinamika yang cepat, dan estetika visual yang agresif namun tetap terstruktur.</p>
+        </div>
+    </main>
+
+    <script>
+        // Mendengarkan saat ada tombol yang ditekan
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Arahkan ke halaman utama saat ESC ditekan
+                window.location.href = 'index.html'; 
+            }
+        });
+    </script>
+</body>
+</html>
