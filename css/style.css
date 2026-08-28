@@ -571,3 +571,75 @@ body.contact-page {
     box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.9); /* Bayangan pindah ke kiri jadi hitam pekat */
     text-shadow: none; /* Menghilangkan glow teks karena background sudah emas */
 }
+
+/* ========================================= */
+/* --- ANIMASI TRANSISI MASUK HALAMAN    --- */
+/* ========================================= */
+
+/* Menerapkan animasi ke header dan kontainer isi */
+.project-header, 
+.content-container,
+.persona-nav { 
+    /* durasi 0.6 detik dengan pergerakan yang mulus (cepat di awal, lambat di akhir) */
+    animation: contentFlyIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0; /* Sembunyikan dulu sebelum animasi mulai */
+}
+
+/* Memberikan sedikit delay (jeda) agar konten bawah muncul setelah header */
+.content-container {
+    animation-delay: 0.15s;
+}
+
+/* Keyframes untuk efek terbang dari bawah dan efek un-blur */
+@keyframes contentFlyIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98); /* Mulai dari bawah & agak mengecil */
+        filter: blur(8px); /* Efek blur ala game saat memuat */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Kembali ke posisi normal */
+        filter: blur(0); /* Blur hilang */
+    }
+}
+
+/* ========================================= */
+/* --- TRANSISI PINTU (DOOR WIPE EFFECT) --- */
+/* ========================================= */
+
+.door-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; /* Selalu di atas segalanya */
+    display: flex;
+    pointer-events: none; /* Agar tidak menghalangi klik */
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background-color: #111; /* Warna pintu hitam pekat */
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.door-left {
+    border-right: 5px solid #FFD700; /* Garis emas di tengah */
+    transform: translateX(0); /* Awalnya Tertutup */
+}
+
+.door-right {
+    border-left: 5px solid #FFD700;
+    transform: translateX(0); /* Awalnya Tertutup */
+}
+
+/* Saat class is-open ditambahkan, pintu geser ke samping */
+.door-transition.is-open .door-left {
+    transform: translateX(-100%);
+}
+.door-transition.is-open .door-right {
+    transform: translateX(100%);
+}

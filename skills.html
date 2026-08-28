@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="skills-page"> 
+    <!-- EFEK TRANSISI PINTU -->
+    <div class="door-transition">
+        <div class="door door-left"></div>
+        <div class="door door-right"></div>
+    </div>
 
     <!-- VIDEO BACKGROUND UNTUK SKILLS -->
     <video autoplay loop muted playsinline class="video-bg">
@@ -53,12 +58,33 @@
     </main>
 
     <script>
-        // Mendengarkan saat ada tombol yang ditekan
+        const transition = document.querySelector('.door-transition');
+
+        // 1. Otomatis BUKA pintu saat halaman selesai dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => { transition.classList.add('is-open'); }, 100);
+        });
+
+        // Fungsi TUTUP pintu lalu pindah
+        function goToPage(url) {
+            transition.classList.remove('is-open'); // Pintu menutup
+            setTimeout(() => { window.location.href = url; }, 500); // Tunggu 0.5 detik baru pindah
+        }
+
+        // 2. Tutup pintu jika tekan ESC
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                // Arahkan ke halaman utama saat ESC ditekan
-                window.location.href = 'index.html'; 
-            }
+            if (event.key === 'Escape') goToPage('index.html');
+        });
+
+        // 3. Tutup pintu jika tombol dengan klik mouse (kecuali WhatsApp)
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetUrl = this.getAttribute('href');
+                if (targetUrl && targetUrl !== '#' && !targetUrl.includes('http')) {
+                    e.preventDefault(); // Cegah pindah langsung
+                    goToPage(targetUrl);
+                }
+            });
         });
     </script>
 </body>

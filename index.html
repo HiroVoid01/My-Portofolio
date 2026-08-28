@@ -38,5 +38,47 @@
         </nav>
     </main>
 
+    <script>
+        const transition = document.querySelector('.door-transition');
+
+        // BUKA pintu saat awal web dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => { transition.classList.add('is-open'); }, 100);
+        });
+
+        function goToPage(url) {
+            transition.classList.remove('is-open');
+            setTimeout(() => { window.location.href = url; }, 500);
+        }
+
+        const menuItems = document.querySelectorAll('.menu-item');
+        let currentIndex = 0;
+
+        function updateMenuSelection() {
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                item.innerHTML = item.textContent; 
+            });
+            const activeItem = menuItems[currentIndex];
+            activeItem.classList.add('active');
+            activeItem.innerHTML = `<span class="highlight">${activeItem.textContent}</span>`;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowDown') {
+                currentIndex = (currentIndex + 1) % menuItems.length;
+                updateMenuSelection();
+            } 
+            else if (event.key === 'ArrowUp') {
+                currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
+                updateMenuSelection();
+            }
+            else if (event.key === 'Enter') {
+                // UBAH BAGIAN INI: Panggil goToPage saat enter ditekan
+                const targetUrl = menuItems[currentIndex].getAttribute('href');
+                goToPage(targetUrl);
+            }
+        });
+    </script>
 </body>
 </html>
